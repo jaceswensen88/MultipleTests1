@@ -27,6 +27,12 @@ class Login extends BaseUrl {
         await this.submitBtn.click();
     }
 
+    async oneUser(){
+        await this.usernameType.setValue(Creds.sinlgeUser);
+        await this.passwordType.setValue(Creds.allPassword);
+        await this.submitBtn.click();
+    }
+
     async falseUser(){
         for (let i = 0; i < Creds.badUsers.length; i++) {  
             await this.loginTask(Creds.badUsers[i],Creds.allPassword);
@@ -43,17 +49,6 @@ class Login extends BaseUrl {
                 await expect(this.loginError).toExist();  
                 }
             } 
-    }
-
-    async logInLogOut(){
-        for (let i = 0; i < Creds.allUsers.length; i++) {  
-        await this.loginTask(Creds.allUsers[i],Creds.allPassword);
-            if (Creds.allUsers[i] === 'locked_out_user') {
-            await expect(this.loginError).toExist();
-            break;   
-            }
-        await Logout.logOutTask();
-        }
     }
 }
 

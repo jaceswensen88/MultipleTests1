@@ -2,7 +2,6 @@ import { $ } from '@wdio/globals';
 import { expect } from '@wdio/globals';
 import Login from './Loging.in.js';
 import BaseUrl from './website.js';
-import BuyItem from './PurchasingItem.js'
 
 class Logout extends BaseUrl {
 
@@ -16,7 +15,6 @@ class Logout extends BaseUrl {
     
     
     async logOutTask () {
-            await BuyItem.buyOnise();
             await expect(this.burgerMenu).toBeExisting();
             await this.burgerMenu.click();
             await this.burgerMenu.moveTo();

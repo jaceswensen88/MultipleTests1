@@ -1,5 +1,6 @@
 import Creds from './Cred.js';
-
+import Logout from './Loging.out.js'
+import Login from './Loging.in.js'
 class BuyItem {
     get onise () {
         return $('[id="item_2_title_link"]');
@@ -40,6 +41,7 @@ class BuyItem {
     }
 
     async buyOnise () {
+        await Login.oneUser();
         await this.onise.waitForClickable();
         await this.onise.click();
         await this.addToCart.click();
@@ -50,7 +52,8 @@ class BuyItem {
         await this.postalCode.setValue(Creds.postalCred);
         await this.continueBtn.click();
         await this.finishBtn.click();
-        await this.backToHome.click()
+        await this.backToHome.click();
+        await Logout.logOutTask();
     }
 }
 export default new BuyItem();
