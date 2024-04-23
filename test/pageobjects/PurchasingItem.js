@@ -1,4 +1,4 @@
-import Creds from './Cred.js';
+import Creds from './Creds.js';
 import Logout from './Loging.out.js'
 import Login from './Loging.in.js'
 class BuyItem {

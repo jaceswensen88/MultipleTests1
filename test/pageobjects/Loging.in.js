@@ -1,7 +1,7 @@
 import { $ } from '@wdio/globals';
 import BaseUrl from './website.js';
 import { expect } from '@wdio/globals';
-import Creds from './Cred.js'
+import Creds from './Creds.js'
 
 class Login extends BaseUrl {
 
