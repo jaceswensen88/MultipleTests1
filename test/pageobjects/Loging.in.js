@@ -1,5 +1,4 @@
 import { $ } from '@wdio/globals';
-import Logout from './Loging.out.js';
 import BaseUrl from './website.js';
 import { expect } from '@wdio/globals';
 import Creds from './Cred.js'
